@@ -1,0 +1,14 @@
+/Users/nizan.r/app/publish/WebhookTest
+/Users/nizan.r/app/publish/appsettings.Development.json
+/Users/nizan.r/app/publish/appsettings.json
+/Users/nizan.r/app/publish/WebhookTest.dll
+/Users/nizan.r/app/publish/WebhookTest.deps.json
+/Users/nizan.r/app/publish/WebhookTest.runtimeconfig.json
+/Users/nizan.r/app/publish/WebhookTest.pdb
+/Users/nizan.r/app/publish/Microsoft.AspNetCore.OpenApi.dll
+/Users/nizan.r/app/publish/Microsoft.OpenApi.dll
+/Users/nizan.r/app/publish/Pipelines.Sockets.Unofficial.dll
+/Users/nizan.r/app/publish/StackExchange.Redis.dll
+/Users/nizan.r/app/publish/Swashbuckle.AspNetCore.Swagger.dll
+/Users/nizan.r/app/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/nizan.r/app/publish/Swashbuckle.AspNetCore.SwaggerUI.dll

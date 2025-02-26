@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "EdVpzpg4fEBdulSTlCpbmFDc83e5tNlAwkvj/QZw0gg=",
+  "Source": "WebhookTest",
+  "BasePath": "_content/WebhookTest",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
