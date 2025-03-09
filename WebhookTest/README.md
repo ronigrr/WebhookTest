@@ -7,3 +7,5 @@ after that run redis with this command
 
 now debug the app or run with
 dotnet WebhookTest.dll
+
+Use http://localhost:5052/swagger/index.html to access the swagger ui
