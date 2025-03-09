@@ -48,6 +48,18 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.5.2, )"
+            },
+            "Polly.Core": {
+              "target": "Package",
+              "version": "[8.5.2, )"
+            },
+            "Polly.Extensions": {
+              "target": "Package",
+              "version": "[8.5.2, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.8.24, )"

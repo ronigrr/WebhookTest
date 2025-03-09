@@ -1,9 +1,9 @@
-﻿using System.Runtime.Serialization.Json;
-using System.Text.Json;
+﻿using System.Text.Json;
 using StackExchange.Redis;
 using WebhookTest.Abstractions.Cache;
+using WebhookTest.Infrastructure;
 
-namespace WebhookTest.Infrastructure;
+namespace WebhookTest.Services;
 
 public class RedisTimerService : IRedisTimerService
 {
@@ -53,9 +53,9 @@ public class RedisTimerService : IRedisTimerService
     }
 
     public async IAsyncEnumerable<CacheEntryResponse> GetExpiredTimers(int batchSize)
-    {
+    { 
         var currentTimestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-       var expiredTimers = await _redis.SortedSetRangeByScoreAsync("timers", Double.NegativeInfinity, currentTimestamp, take: batchSize);
+       var expiredTimers = await _redis.SortedSetRangeByScoreAsync("timers", double.NegativeInfinity, currentTimestamp, take: batchSize);
         
         // var skip = 0;
         // var timers = await _redis.SortedSetRangeByScoreAsync("timers", Double.NegativeInfinity, currentTimestamp, take: batchSize,skip: skip);
@@ -85,9 +85,36 @@ public class RedisTimerService : IRedisTimerService
         }
     }
 
-    public async Task RemoveTimer(string id)
+    public async Task<bool> RemoveTimer(string id)
     {
-        await _redis.SortedSetRemoveAsync("timers", id);
-        await _redis.KeyDeleteAsync($"timer:{id}");
+        try
+        {
+            await _redis.SortedSetRemoveAsync("timers", id);
+            await _redis.KeyDeleteAsync($"timer:{id}");
+            return true;
+        }
+        catch (Exception e)
+        {
+            _logger.LogWarning($"Failed to delete timer '{id}'");
+            return false;
+        }
+       
+    }
+
+    public async Task<List<CacheEntryResponse>> GetTimers()
+    {
+        var currentTimestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        var timers = await _redis.SortedSetRangeByScoreAsync("timers", Double.PositiveInfinity, currentTimestamp);
+        
+        var cacheEntryResponses = new List<CacheEntryResponse>();
+       
+        await Parallel.ForEachAsync(timers, async (id, _) =>
+        {
+            var fullTimer = await GetTimerById(id!);
+            cacheEntryResponses.Add(fullTimer);
+        });
+            
+        return cacheEntryResponses;
+        
     }
 }

@@ -74,3 +74,7 @@ C:\Users\roni4\RiderProjects\WebhookTest\WebhookTest\obj\Debug\net9.0\refint\Web
 C:\Users\roni4\RiderProjects\WebhookTest\WebhookTest\obj\Debug\net9.0\WebhookTest.pdb
 C:\Users\roni4\RiderProjects\WebhookTest\WebhookTest\obj\Debug\net9.0\WebhookTest.genruntimeconfig.cache
 C:\Users\roni4\RiderProjects\WebhookTest\WebhookTest\obj\Debug\net9.0\ref\WebhookTest.dll
+C:\Users\roni4\RiderProjects\WebhookTest\WebhookTest\obj\Debug\net9.0\WebhookTest.sourcelink.json
+C:\Users\roni4\RiderProjects\WebhookTest\WebhookTest\bin\Debug\net9.0\Polly.Core.dll
+C:\Users\roni4\RiderProjects\WebhookTest\WebhookTest\bin\Debug\net9.0\Polly.Extensions.dll
+C:\Users\roni4\RiderProjects\WebhookTest\WebhookTest\bin\Debug\net9.0\Polly.dll
